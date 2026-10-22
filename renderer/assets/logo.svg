@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B3A63"/><stop offset="1" stop-color="#0D1A2C"/>
+    </linearGradient>
+    <linearGradient id="amb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC774"/><stop offset="1" stop-color="#FF9D2E"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2A4F80"/><stop offset="1" stop-color="#16294A"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <!-- phone -->
+  <rect x="62" y="40" width="84" height="160" rx="16" fill="url(#screen)" stroke="url(#amb)" stroke-width="8"/>
+  <rect x="92" y="54" width="24" height="5" rx="2.5" fill="#FFC774" opacity=".9"/>
+  <!-- mirror beam -->
+  <path d="M150 92 L212 68 L212 188 L150 164 Z" fill="url(#amb)" opacity=".92"/>
+  <path d="M150 92 L212 68 L212 100 L150 118 Z" fill="#fff" opacity=".18"/>
+  <!-- live dot -->
+  <circle cx="128" cy="183" r="7" fill="#5CD69B"/>
+</svg>

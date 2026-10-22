@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# Release artifacts (published to GitHub Releases instead of the repo)
+exe/
+
+# Bundled third-party binaries (scrcpy + adb) — fetched separately, see vendor/README.md
+vendor/scrcpy-win64/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,0 +1,20 @@
+const { contextBridge, ipcRenderer } = require('electron');
+contextBridge.exposeInMainWorld('api', {
+  poll: () => ipcRenderer.invoke('poll'),
+  startMirror: (serial, opts) => ipcRenderer.invoke('mirror:start', serial, opts),
+  stopMirror: (serial) => ipcRenderer.invoke('mirror:stop', serial),
+  connect: (addr) => ipcRenderer.invoke('adb:connect', addr),
+  disconnect: (addr) => ipcRenderer.invoke('adb:disconnect', addr),
+  toWifi: (serial) => ipcRenderer.invoke('adb:tcpip', serial),
+  restartAdb: () => ipcRenderer.invoke('adb:restart'),
+  forget: (serial) => ipcRenderer.invoke('history:forget', serial),
+  checkTools: () => ipcRenderer.invoke('tools:check'),
+  installTools: () => ipcRenderer.invoke('tools:install'),
+  onInstallProgress: (cb) => ipcRenderer.on('install-progress', (_e, d) => cb(d)),
+  getSettings: () => ipcRenderer.invoke('settings:get'),
+  setSettings: (p) => ipcRenderer.invoke('settings:set', p),
+  browse: (which) => ipcRenderer.invoke('settings:browse', which),
+  getVersion: () => ipcRenderer.invoke('app:version'),
+  openExternal: (url) => ipcRenderer.invoke('open-external', url),
+  onMirrorExit: (cb) => ipcRenderer.on('mirror-exit', (_e, d) => cb(d)),
+});
